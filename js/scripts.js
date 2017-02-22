@@ -4,9 +4,12 @@ $(document).ready(function() {
     var gender = $("select#gender").val();
 
     var quote = (100 - age) * 3;
+    if (gender === 'male' && age < 26) {
+      quote += 50;
+    }
 
-    $("#rate").empty().append(quote);
-    $("#quote").show();
+    $("#rate").text(quote);
+    $("#quote").show()
 
     event.preventDefault();
   });
